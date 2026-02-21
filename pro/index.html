@@ -3,139 +3,281 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DetailPage Maker PRO</title>
-  <meta name="description" content="DetailPage Maker PRO 안내 페이지" />
+  <title>MISHARP Detail Page Maker - PRO</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#ffffff;
+      --bg1:#fbfcff;
+      --bg2:#f3f6fb;
+
       --card:#ffffff;
-      --border:#e6e8ef;
-      --text:#101828;
-      --muted:#667085;
-      --primary:#111827;
-      --shadow:0 10px 30px rgba(16,24,40,.07);
-      --radius:18px;
+      --border:#e8edf5;
+
+      --text:#1b2533;
+      --muted:#6b7787;
+
+      --primary:#162238;
+      --primaryHover:#111a2a;
+
+      --accent:#ff8a3d;
+      --accentSoft:#fff2ea;
+
+      --shadow:0 16px 45px rgba(15,23,42,.08);
+      --shadow2:0 10px 28px rgba(15,23,42,.06);
+
+      --radius:24px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
     body{
       margin:0;
-      font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(900px 520px at 20% -10%, rgba(17,24,39,.06), transparent 55%),
-        radial-gradient(860px 480px at 80% 0%, rgba(17,24,39,.05), transparent 60%),
-        var(--bg);
+      font-family:"Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(900px 600px at 12% 8%, rgba(255,138,61,.11), rgba(255,255,255,0) 52%),
+        radial-gradient(900px 600px at 88% 12%, rgba(59,130,246,.09), rgba(255,255,255,0) 52%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
     }
-    .wrap{max-width:980px;margin:0 auto;padding:56px 18px 80px}
-    .top{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px
+
+    .wrap{
+      max-width:1040px;
+      margin:0 auto;
+      padding:58px 20px 92px;
     }
-    .brand{font-weight:950;letter-spacing:-.2px}
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.2px;
+      color:#0f172a;
+    }
+
     a.back{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:850;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:14px;
       border:1px solid var(--border);
-      padding:10px 12px;
-      border-radius:12px;
-      background:#fff;
+      background:rgba(255,255,255,.75);
+      text-decoration:none;
+      color:#364152;
+      font-weight:700;
+      letter-spacing:-0.25px;
+      transition:.18s ease;
     }
-    a.back:hover{background:rgba(17,24,39,.03)}
-    .card{
+    a.back:hover{
+      background:rgba(255,255,255,.92);
+      box-shadow:0 10px 22px rgba(15,23,42,.07);
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      background:rgba(255,255,255,.82);
       border:1px solid var(--border);
       border-radius:var(--radius);
-      background:var(--card);
       box-shadow:var(--shadow);
-      padding:30px 26px;
+      padding:52px 44px 40px;
     }
-    h1{margin:0 0 10px;font-size:34px;letter-spacing:-.6px;line-height:1.2}
-    .sub{margin:0 0 16px;color:var(--muted);line-height:1.75;font-weight:650}
+
+    h1{
+      margin:0 0 12px;
+      font-size:38px;
+      font-weight:800;
+      letter-spacing:-1.1px;
+      line-height:1.18;
+      color:#0f172a;
+    }
+
+    .sub{
+      margin:0 0 22px;
+      font-size:16px;
+      font-weight:500;
+      letter-spacing:-0.35px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
     .notice{
-      margin:16px 0 18px;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid rgba(17,24,39,.10);
-      background:rgba(17,24,39,.03);
-      font-size:14px;
-      font-weight:850;
-      line-height:1.65;
-      color:#344054;
-    }
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    a.btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:14px 18px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:950;
-      border:1px solid transparent;
-    }
-    a.primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.18)}
-    a.primary:hover{filter:brightness(.92)}
-    a.ghost{background:#fff;color:var(--primary);border:1px solid var(--border)}
-    a.ghost:hover{background:rgba(17,24,39,.03)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .mini{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.78);
       border:1px solid var(--border);
-      border-radius:16px;
-      background:#fff;
-      padding:16px;
-      box-shadow:var(--shadow);
+      border-radius:18px;
+      padding:16px 18px;
+      margin:14px 0 26px;
+      box-shadow:var(--shadow2);
     }
-    .mini .t{font-weight:950;margin-bottom:6px}
-    .mini .d{color:var(--muted);font-size:13px;line-height:1.6;font-weight:650}
-    .footer{
-      margin-top:22px;
-      text-align:center;
-      font-size:12px;
-      color:#98A2B3;
-      font-weight:650;
+    .notice .icon{
+      width:34px; height:34px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--accentSoft);
+      color:var(--accent);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+    .notice .txt{
+      font-size:14px;
+      color:#556476;
       line-height:1.7;
+      letter-spacing:-0.2px;
+      font-weight:500;
     }
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:30px}
+
+    .btns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:6px 0 28px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:14px;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:-0.3px;
+      text-decoration:none;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+
+    a.primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 12px 26px rgba(22,34,56,.18);
+    }
+    a.primary:hover{
+      background:var(--primaryHover);
+      transform:translateY(-2px);
+      box-shadow:0 16px 32px rgba(22,34,56,.22);
+    }
+
+    a.ghost{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--border);
+      color:#0f172a;
+    }
+    a.ghost:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(15,23,42,.07);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:10px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
+    }
+
+    .card .t{
+      font-weight:800;
+      margin-bottom:8px;
+      letter-spacing:-0.5px;
+      color:#0f172a;
+    }
+
+    .card .d{
+      font-size:14px;
+      color:#637284;
+      line-height:1.75;
+      letter-spacing:-0.2px;
+      font-weight:500;
+    }
+
+    .footer{
+      margin-top:34px;
+      text-align:center;
+      font-size:13px;
+      color:#9aa6b2;
+      letter-spacing:-0.15px;
+      line-height:1.8;
+    }
+
+    @media (max-width: 920px){
+      .hero{ padding:38px 22px 30px; }
+      h1{ font-size:28px; }
+      .grid{ grid-template-columns:1fr; }
+      .btns a.btn{ width:100%; }
+      .wrap{ padding:44px 16px 80px; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <div class="top">
-      <div class="brand">DetailPage Maker</div>
-      <a class="back" href="/" rel="noopener">← 홈으로</a>
+    <div class="topbar">
+      <div class="brand">MISHARP Detail Page Maker</div>
+      <a class="back" href="/">← 홈으로</a>
     </div>
 
-    <div class="card">
-      <h1>PRO 전용 안내 페이지</h1>
+    <section class="hero">
+      <h1>쇼핑몰 상세페이지 자동 생성기 PRO</h1>
+
       <p class="sub">
         DetailPage Maker PRO는 고급 기능(PSD/확장 기능 등)을 제공하는 PRO 전용 버전입니다.<br>
         발급받은 PRO 안내(접속 URL + 이용키)를 준비해 주세요.
       </p>
 
       <div class="notice">
-        🔔 첫 접속 시 서버 특성상 5~15초 정도 준비 시간이 있을 수 있습니다.<br>
-        영어 안내 화면이 잠깐 뜰 수 있지만, 잠시 기다리시면 자동으로 실행됩니다.
+        <div class="icon">🔔</div>
+        <div class="txt">
+          첫 접속 시 서버 특성상 5~15초 정도 준비 시간이 있을 수 있습니다.<br>
+          영어 안내 화면이 잠깐 뜰 수 있지만, 잠시 기다리시면 자동으로 실행됩니다.
+        </div>
       </div>
 
       <div class="btns">
+        <!-- PRO 실행: 형준님이 원하시는 URL로 교체 가능 -->
         <a class="btn primary" href="https://misharp-image-maker-v3.streamlit.app/" target="_blank" rel="noopener">
           PRO 프로그램 실행 →
         </a>
-        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScA_ZEMDmlW3DwdPk_Bn6L5WUeOoT7BFhRb3MPP2t_EMtBHwA/viewform" target="_blank" rel="noopener">
+        <!-- PRO 신청/문의: 구글폼으로 연결 -->
+        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScA_ZEMDmlW3DwdPk_Bn6L5WUeOoT7BFhRb3MPP2t_EMtBHwA/viewform?usp=publish-editor" target="_blank" rel="noopener">
           PRO 신청/문의 →
         </a>
       </div>
 
       <div class="grid">
-        <div class="mini">
-          <div class="t">안정적인 규격</div>
-          <div class="d">900px 기준 결과물을 안정적으로 맞춥니다.</div>
+        <div class="card">
+          <div class="t">현직 쇼핑몰 대표가 직접 제작</div>
+          <div class="d">상세페이지 제작에 실제로 필요한 기능만 제공</div>
         </div>
-        <div class="mini">
+        <div class="card">
           <div class="t">업무시간 단축</div>
           <div class="d">반복 작업을 줄여 디자인에 집중할 수 있습니다.</div>
         </div>
-        <div class="mini">
+        <div class="card">
           <div class="t">PRO 확장</div>
           <div class="d">PSD/템플릿/미리보기 등 고급 기능을 제공합니다.</div>
         </div>
@@ -145,7 +287,7 @@
         문의: misharpmail@naver.com<br>
         © 2006-2026 MISHARP. All Rights Reserved.
       </div>
-    </div>
+    </section>
   </div>
 </body>
 </html>
