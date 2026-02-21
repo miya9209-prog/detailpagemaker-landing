@@ -12,7 +12,6 @@
       --border:#e6e8ef;
       --text:#101828;
       --muted:#667085;
-      --danger:#e60012;
       --primary:#111827;
       --shadow:0 10px 30px rgba(16,24,40,.07);
       --radius:18px;
@@ -28,65 +27,98 @@
       color:var(--text);
     }
     .wrap{max-width:1040px;margin:0 auto;padding:56px 18px 80px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
-    .brand{font-weight:950;letter-spacing:-.2px;font-size:16px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand{font-weight:950;font-size:16px;letter-spacing:-.2px}
     .pill{
-      display:inline-flex;align-items:center;justify-content:center;
       padding:10px 14px;border-radius:999px;
-      background:rgba(17,24,39,.06);border:1px solid var(--border);
-      color:var(--text);font-weight:900;font-size:13px;
+      background:rgba(17,24,39,.06);
+      border:1px solid var(--border);
+      font-weight:850;font-size:13px;
     }
     .hero{
       border:1px solid var(--border);
       border-radius:var(--radius);
       background:var(--card);
       box-shadow:var(--shadow);
-      padding:34px 28px;
+      padding:36px 28px;
     }
-    h1{margin:0 0 10px;font-size:40px;line-height:1.15;letter-spacing:-.6px}
-    .sub{margin:0 0 18px;color:var(--muted);line-height:1.75;font-weight:650}
-    .callout{
-      margin-top:10px;
-      padding:12px 14px;
-      border:1px solid rgba(230,0,18,.18);
-      background:rgba(230,0,18,.04);
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.15;
+      letter-spacing:-0.6px;
+    }
+    .sub{
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.75;
+      margin-bottom:20px;
+    }
+    .notice{
+      margin:14px 0 20px;
+      padding:14px 16px;
       border-radius:14px;
-      color:#b1000d;
-      font-weight:850;
+      border:1px solid rgba(17,24,39,.08);
+      background:rgba(17,24,39,.03);
       font-size:14px;
+      font-weight:800;
+      color:#344054;
       line-height:1.6;
     }
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
     a.btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:14px 18px;border-radius:14px;text-decoration:none;
-      font-weight:950;border:1px solid transparent;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 20px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:950;
+      font-size:15px;
+      transition:.2s ease;
     }
-    a.primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.18)}
-    a.primary:hover{filter:brightness(.92)}
-    a.ghost{background:#fff;color:var(--primary);border:1px solid var(--border)}
+    a.primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(17,24,39,.18);
+    }
+    a.primary:hover{filter:brightness(.9)}
+    a.ghost{
+      background:#fff;
+      color:var(--primary);
+      border:1px solid var(--border);
+    }
     a.ghost:hover{background:rgba(17,24,39,.03)}
-    .howto{
-      margin-top:18px;border:1px solid var(--border);border-radius:16px;
-      padding:16px;background:rgba(255,255,255,.75)
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:24px;
     }
-    .howto .t{font-weight:950;margin-bottom:10px}
-    .steps{display:flex;gap:10px;flex-wrap:wrap}
-    .step{
-      border:1px solid var(--border);border-radius:12px;
-      padding:10px 12px;background:#fff;font-weight:850;color:#344054
-    }
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
     .card{
-      border:1px solid var(--border);border-radius:16px;background:#fff;
-      padding:16px;box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      padding:18px;
+      box-shadow:var(--shadow);
     }
-    .card .t{font-weight:950;margin-bottom:6px}
-    .card .d{color:var(--muted);font-size:13px;line-height:1.6;font-weight:650}
+    .card .t{
+      font-weight:950;
+      margin-bottom:6px;
+    }
+    .card .d{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:650;
+      line-height:1.6;
+    }
     .footer{
-      margin-top:22px;color:#98A2B3;font-size:12px;font-weight:650;text-align:center
+      margin-top:28px;
+      text-align:center;
+      font-size:12px;
+      color:#98A2B3;
+      font-weight:650;
+      line-height:1.7;
     }
-    @media (max-width:900px){
+    @media(max-width:900px){
       .grid{grid-template-columns:1fr}
       h1{font-size:32px}
     }
@@ -102,50 +134,42 @@
     <div class="hero">
       <h1>상세페이지 이미지,<br>업로드만 하면 자동 완성</h1>
       <p class="sub">
-        JPG/PNG 최대 10장 업로드 → 간격 조정 → 생성/저장.<br>
-        결과는 <b>가로 900px 고정</b>으로 자동 정리되어 반복 작업 시간을 줄여줍니다.
+        JPG/PNG 최대 10장 업로드 → 간격 조정 → 생성 → 저장.<br>
+        결과는 가로 <b>900px 고정</b>으로 자동 정리됩니다.
       </p>
 
-      <div class="callout">
-        ✔ FREE 버전: 합치기/간격/저장까지 빠르게<br>
-        ✔ PRO 버전: PSD(레이어/고급개체) 등 고급 기능 제공(신청 접수 중)
+      <div class="notice">
+        🔔 첫 접속 시 서버 특성상 5~15초 준비 시간이 있을 수 있습니다.<br>
+        영어 안내 화면이 잠시 나타날 수 있으나 자동으로 실행됩니다.
       </div>
 
       <div class="btns">
-        <a class="btn primary" href="https://detalepage-maker-v1.streamlit.app/" target="_blank" rel="noopener">
+        <a class="btn primary" href="https://detalepage-maker-v1.streamlit.app/" target="_blank">
           무료로 시작하기 →
         </a>
-        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScA_ZEMDmlW3DwdPk_Bn6L5WUeOoT7BFhRb3MPP2t_EMtBHwA/viewform" target="_blank" rel="noopener">
-          PRO 신청하기
+        <a class="btn ghost" href="/pro/">
+          PRO 안내 보기 →
         </a>
-      </div>
-
-      <div class="howto">
-        <div class="t">사용방법</div>
-        <div class="steps">
-          <div class="step">1) 이미지 업로드(최대 10개)</div>
-          <div class="step">2) 이미지 간격 조정(0~300px)</div>
-          <div class="step">3) 생성 → 저장하기</div>
-        </div>
       </div>
 
       <div class="grid">
         <div class="card">
           <div class="t">업무시간 절감</div>
-          <div class="d">이미지 합치기/정렬/리사이즈 반복을 자동화합니다.</div>
+          <div class="d">이미지 합치기와 정렬 작업을 자동화합니다.</div>
         </div>
         <div class="card">
           <div class="t">규격 통일</div>
-          <div class="d">가로 900px 기준으로 결과물을 안정적으로 맞춥니다.</div>
+          <div class="d">쇼핑몰 기준에 맞는 900px 규격 유지.</div>
         </div>
         <div class="card">
           <div class="t">PRO 확장</div>
-          <div class="d">PSD 다운로드, 템플릿, 미리보기 등 확장 기능을 제공합니다.</div>
+          <div class="d">PSD 생성 및 고급 기능 제공.</div>
         </div>
       </div>
 
       <div class="footer">
-        문의: misharpmail@naver.com · © 2006-2026 MISHARP
+        문의: misharpmail@naver.com<br>
+        © 2006-2026 MISHARP. All Rights Reserved.
       </div>
     </div>
   </div>
