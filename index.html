@@ -1,1 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DetailPage Maker | 상세페이지 자동 생성기</title>
+  <meta name="description" content="쇼핑몰 상세페이지 이미지를 업로드만 하면 자동으로 900px 규격으로 생성합니다." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e6e8ef;
+      --text:#101828;
+      --muted:#667085;
+      --danger:#e60012;
+      --primary:#111827;
+      --shadow:0 10px 30px rgba(16,24,40,.07);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(17,24,39,.06), transparent 50%),
+        radial-gradient(900px 500px at 80% 0%, rgba(17,24,39,.05), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:1040px;margin:0 auto;padding:56px 18px 80px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+    .brand{font-weight:950;letter-spacing:-.2px;font-size:16px}
+    .pill{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:999px;
+      background:rgba(17,24,39,.06);border:1px solid var(--border);
+      color:var(--text);font-weight:900;font-size:13px;
+    }
+    .hero{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      padding:34px 28px;
+    }
+    h1{margin:0 0 10px;font-size:40px;line-height:1.15;letter-spacing:-.6px}
+    .sub{margin:0 0 18px;color:var(--muted);line-height:1.75;font-weight:650}
+    .callout{
+      margin-top:10px;
+      padding:12px 14px;
+      border:1px solid rgba(230,0,18,.18);
+      background:rgba(230,0,18,.04);
+      border-radius:14px;
+      color:#b1000d;
+      font-weight:850;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    a.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:14px 18px;border-radius:14px;text-decoration:none;
+      font-weight:950;border:1px solid transparent;
+    }
+    a.primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.18)}
+    a.primary:hover{filter:brightness(.92)}
+    a.ghost{background:#fff;color:var(--primary);border:1px solid var(--border)}
+    a.ghost:hover{background:rgba(17,24,39,.03)}
+    .howto{
+      margin-top:18px;border:1px solid var(--border);border-radius:16px;
+      padding:16px;background:rgba(255,255,255,.75)
+    }
+    .howto .t{font-weight:950;margin-bottom:10px}
+    .steps{display:flex;gap:10px;flex-wrap:wrap}
+    .step{
+      border:1px solid var(--border);border-radius:12px;
+      padding:10px 12px;background:#fff;font-weight:850;color:#344054
+    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .card{
+      border:1px solid var(--border);border-radius:16px;background:#fff;
+      padding:16px;box-shadow:var(--shadow);
+    }
+    .card .t{font-weight:950;margin-bottom:6px}
+    .card .d{color:var(--muted);font-size:13px;line-height:1.6;font-weight:650}
+    .footer{
+      margin-top:22px;color:#98A2B3;font-size:12px;font-weight:650;text-align:center
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">DetailPage Maker</div>
+      <div class="pill">MISHARP 실사용 기반</div>
+    </div>
 
+    <div class="hero">
+      <h1>상세페이지 이미지,<br>업로드만 하면 자동 완성</h1>
+      <p class="sub">
+        JPG/PNG 최대 10장 업로드 → 간격 조정 → 생성/저장.<br>
+        결과는 <b>가로 900px 고정</b>으로 자동 정리되어 반복 작업 시간을 줄여줍니다.
+      </p>
+
+      <div class="callout">
+        ✔ FREE 버전: 합치기/간격/저장까지 빠르게<br>
+        ✔ PRO 버전: PSD(레이어/고급개체) 등 고급 기능 제공(신청 접수 중)
+      </div>
+
+      <div class="btns">
+        <a class="btn primary" href="https://detalepage-maker-v1.streamlit.app/" target="_blank" rel="noopener">
+          무료로 시작하기 →
+        </a>
+        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScA_ZEMDmlW3DwdPk_Bn6L5WUeOoT7BFhRb3MPP2t_EMtBHwA/viewform" target="_blank" rel="noopener">
+          PRO 신청하기
+        </a>
+      </div>
+
+      <div class="howto">
+        <div class="t">사용방법</div>
+        <div class="steps">
+          <div class="step">1) 이미지 업로드(최대 10개)</div>
+          <div class="step">2) 이미지 간격 조정(0~300px)</div>
+          <div class="step">3) 생성 → 저장하기</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="t">업무시간 절감</div>
+          <div class="d">이미지 합치기/정렬/리사이즈 반복을 자동화합니다.</div>
+        </div>
+        <div class="card">
+          <div class="t">규격 통일</div>
+          <div class="d">가로 900px 기준으로 결과물을 안정적으로 맞춥니다.</div>
+        </div>
+        <div class="card">
+          <div class="t">PRO 확장</div>
+          <div class="d">PSD 다운로드, 템플릿, 미리보기 등 확장 기능을 제공합니다.</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        문의: misharpmail@naver.com · © 2006-2026 MISHARP
+      </div>
+    </div>
+  </div>
+</body>
+</html>
