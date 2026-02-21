@@ -1,381 +1,300 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>쇼핑몰 상세페이지 만들기 자동화 생성기 | 이미지만 올리면 상세페이지 완성</title>
-  <meta name="description" content="상세페이지를 빠르게 완성하세요. 20년 여성의류 온라인 쇼핑몰 대표가 만든 실무형 자동 생성기입니다. 여러 장의 이미지를 업로드하면 900px 상세페이지로 자동 완성! 무료로 시작하세요." />
-  <link rel="canonical" href="https://www.detailpagemaker.com/" />
+<title>쇼핑몰 상세페이지 만들기 자동화 생성기 | 이미지만 올리면 상세페이지 완성</title>
+<meta name="description" content="20년 여성의류 온라인 쇼핑몰 대표가 만든 실무형 상세페이지 자동 생성기. 이미지를 업로드하면 900px 상세페이지로 자동 완성. 무료로 시작하세요." />
+<link rel="canonical" href="https://www.detailpagemaker.com/" />
+<meta name="robots" content="index,follow" />
 
-  <meta name="robots" content="index,follow" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="쇼핑몰 상세페이지 자동 완성 생성기">
+<meta property="og:description" content="이미지만 올리면 900px 상세페이지 자동 완성. 실무형 자동화 도구.">
+<meta property="og:url" content="https://www.detailpagemaker.com/">
+<meta property="og:image" content="https://www.detailpagemaker.com/assets/og/og-main.jpg">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="DetailPageMaker">
-  <meta property="og:title" content="쇼핑몰 상세페이지 자동 완성 생성기">
-  <meta property="og:description" content="이미지만 올리면 900px 상세페이지 자동 완성. 쇼핑몰 실무 기준으로 만든 자동 생성기.">
-  <meta property="og:url" content="https://www.detailpagemaker.com/">
-  <meta property="og:image" content="https://www.detailpagemaker.com/assets/og/og-main.jpg">
+<link rel="icon" href="/favicon.ico">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="쇼핑몰 상세페이지 자동 완성 생성기">
-  <meta name="twitter:description" content="이미지만 올리면 900px 상세페이지 자동 완성. 실무형 자동화 도구.">
-  <meta name="twitter:image" content="https://www.detailpagemaker.com/assets/og/og-main.jpg">
+<style>
+:root{
+  --bg:#f6f8fc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#556274;
+  --line:rgba(15,23,42,.10);
+  --shadow:0 12px 30px rgba(2,8,23,.08);
+  --shadow2:0 10px 25px rgba(2,8,23,.06);
+  --radius:20px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+.container{
+  max-width:1160px;
+  margin:0 auto;
+  padding:80px 20px 120px; /* 🔥 상하 여백 확장 */
+}
 
-  <style>
-    :root{
-      --bg:#f6f8fc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#556274;
-      --line:rgba(15,23,42,.10);
-      --shadow:0 12px 30px rgba(2,8,23,.08);
-      --shadow2:0 10px 25px rgba(2,8,23,.06);
-      --radius:18px;
-      --radius2:14px;
-      --primary:#111827;
-      --primary2:#0b1220;
-    }
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;
-      background:
-        radial-gradient(900px 500px at 15% 0%, rgba(99,102,241,.12), transparent 60%),
-        radial-gradient(900px 500px at 85% 10%, rgba(16,185,129,.10), transparent 55%),
-        var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit;}
+/* HERO */
+.hero{
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:48px 42px; /* 🔥 내부 여백 확대 */
+  margin-bottom:120px; /* 🔥 히어로와 다음 섹션 거리 확대 */
+}
 
-    .container{
-      max-width:1160px;
-      margin:0 auto;
-      padding:54px 20px 70px;
-    }
+.badgeRow{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.badge{
+  padding:8px 14px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  font-size:13px;
+  font-weight:700;
+}
 
-    /* HERO (세로 1컬럼) */
-    .hero{
-      background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.72));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px 26px 22px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px -2px auto auto;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle at 30% 30%, rgba(99,102,241,.22), transparent 60%);
-      pointer-events:none;
-    }
-    .badgeRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-bottom:14px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.8);
-      font-size:13px;
-      color:rgba(15,23,42,.78);
-      font-weight:700;
-    }
-    .badgeDot{
-      width:8px;height:8px;border-radius:50%;
-      background:#10b981;
-      box-shadow:0 0 0 4px rgba(16,185,129,.12);
-    }
+h1{
+  margin:0 0 20px;
+  font-size:42px;
+  font-weight:900;
+  line-height:1.3;
+}
 
-    h1{
-      margin:0 0 10px;
-      font-size:40px;
-      line-height:1.25;
-      letter-spacing:-.6px;
-      font-weight:900;
-    }
-    .sub{
-      margin:0 0 18px;
-      font-size:16.5px;
-      line-height:1.7;
-      color:var(--muted);
-      max-width:60ch;
-    }
+.sub{
+  margin:0 0 30px;
+  font-size:17px;
+  line-height:1.8;
+  color:var(--muted);
+}
 
-    .ctaRow{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 18px;
-      border-radius:12px;
-      font-weight:900;
-      text-decoration:none;
-      border:1px solid transparent;
-      transition:transform .06s ease, opacity .15s ease, box-shadow .15s ease;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:active{transform:translateY(1px);}
-    .btnPrimary{
-      background:linear-gradient(180deg, #111827, #0b1220);
-      color:#fff;
-      box-shadow:0 10px 20px rgba(2,8,23,.20);
-    }
-    .btnPrimary:hover{opacity:.95;}
-    .btnGhost{
-      background:rgba(255,255,255,.85);
-      color:#111827;
-      border:1px solid rgba(15,23,42,.14);
-    }
-    .btnGhost:hover{box-shadow:var(--shadow2);}
+.ctaRow{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
 
-    .micro{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:14px;
-      color:rgba(15,23,42,.65);
-      font-size:13px;
-      font-weight:700;
-    }
-    .micro span{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:12px;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(15,23,42,.10);
-    }
-    .micro i{
-      width:6px;height:6px;border-radius:50%;
-      background:rgba(15,23,42,.55);
-      display:inline-block;
-    }
+.btn{
+  padding:16px 22px;
+  border-radius:12px;
+  font-weight:800;
+  text-decoration:none;
+}
 
-    /* SECTION TITLES */
-    .sectionTitle{
-      font-size:26px;
-      font-weight:900;
-      letter-spacing:-.3px;
-      margin:54px 0 18px;
-    }
+.btnPrimary{
+  background:#111827;
+  color:#fff;
+}
+.btnGhost{
+  background:#fff;
+  border:1px solid var(--line);
+  color:#111827;
+}
 
-    /* EXAMPLES */
-    .examples{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    .exCard{
-      background:var(--card);
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:var(--radius);
-      padding:14px;
-      box-shadow:var(--shadow2);
-    }
-    .exMedia{
-      width:100%;
-      height:240px;
-      border-radius:var(--radius2);
-      overflow:hidden;
-      background:#eef2f7;
-      border:1px solid rgba(15,23,42,.06);
-    }
-    .exMedia img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-    }
-    .exMedia.contain img{
-      object-fit:contain;
-      object-position:center top;
-      background:#eef2f7;
-    }
-    .exCap{
-      margin-top:12px;
-      font-size:14px;
-      font-weight:900;
-      color:rgba(15,23,42,.82);
-    }
+.micro{
+  margin-top:22px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#666;
+}
 
-    /* 3개 배너(미니카드) : CTA 위로 이동 */
-    .miniGrid{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
-    .miniCard{
-      background:rgba(255,255,255,.85);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:var(--radius);
-      padding:14px 14px 13px;
-      box-shadow:var(--shadow2);
-    }
-    .miniTitle{margin:0 0 6px; font-weight:900; font-size:14px;}
-    .miniDesc{margin:0; font-size:13px; line-height:1.5; color:rgba(15,23,42,.68);}
+/* SECTION TITLE */
+.sectionTitle{
+  font-size:28px;
+  font-weight:900;
+  margin:140px 0 40px; /* 🔥 섹션 상단 여백 크게 */
+}
 
-    /* CTA BOX */
-    .ctaBox{
-      margin-top:16px;
-      background:rgba(255,255,255,.85);
-      border:1px solid rgba(15,23,42,.10);
-      padding:22px 22px;
-      border-radius:var(--radius);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:14px;
-      box-shadow:var(--shadow2);
-    }
-    .ctaText strong{font-weight:900;}
-    .ctaText{
-      color:rgba(15,23,42,.78);
-      line-height:1.55;
-      font-size:14px;
-    }
+/* EXAMPLES */
+.examples{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px; /* 🔥 카드 간격 확대 */
+  margin-bottom:120px; /* 🔥 예시와 다음 블록 거리 확대 */
+}
+.exCard{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow2);
+}
+.exMedia{
+  width:100%;
+  height:260px; /* 🔥 높이 살짝 증가 */
+  border-radius:16px;
+  overflow:hidden;
+  background:#eef2f7;
+}
+.exMedia img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.exMedia.contain img{
+  object-fit:contain;
+  object-position:center top;
+}
+.exCap{
+  margin-top:14px;
+  font-size:15px;
+  font-weight:800;
+}
 
-    /* FOOTER */
-    .footer{
-      text-align:center;
-      font-size:13px;
-      color:rgba(15,23,42,.55);
-      padding:44px 0 20px;
-    }
+/* MINI GRID */
+.miniGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:80px; /* 🔥 CTA와 거리 확보 */
+}
+.miniCard{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow2);
+}
+.miniTitle{
+  margin:0 0 10px;
+  font-weight:900;
+}
+.miniDesc{
+  margin:0;
+  font-size:14px;
+  color:#555;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 980px){
-      h1{font-size:34px;}
-      .examples{grid-template-columns:1fr;}
-      .miniGrid{grid-template-columns:1fr;}
-      .exMedia{height:240px;}
-    }
-  </style>
+/* CTA */
+.ctaBox{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:32px 30px; /* 🔥 여백 증가 */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  box-shadow:var(--shadow);
+  margin-bottom:120px; /* 🔥 푸터와 거리 확보 */
+}
+.ctaText{
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  font-size:13px;
+  color:#777;
+  padding:60px 0 20px;
+}
+
+/* MOBILE */
+@media(max-width:980px){
+  h1{font-size:34px;}
+  .examples{grid-template-columns:1fr;}
+  .miniGrid{grid-template-columns:1fr;}
+  .hero{padding:36px 24px;}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- HERO (세로 정리) -->
-    <section class="hero">
-      <div class="badgeRow">
-        <span class="badge"><span class="badgeDot"></span> 무료로 바로 시작</span>
-        <span class="badge">실무형 + 시간절약형</span>
-        <span class="badge">업로드 한번에 끝</span>
-      </div>
-
-      <h1>쇼핑몰 상세페이지 자동 완성 생성기</h1>
-      <p class="sub">
-        20년 여성의류 쇼핑몰 대표가 직접 만든 실무형 자동 생성기입니다.<br>
-        여러 장의 이미지를 업로드하면 <b>900px 상세페이지</b>로 자동 완성됩니다.
-      </p>
-
-      <div class="ctaRow">
-        <a class="btn btnPrimary" href="https://misharp-image-maker-v3.streamlit.app/">
-          무료로 시작하기 →
-        </a>
-        <a class="btn btnGhost" href="/pro/">
-          PRO 안내 보기 →
-        </a>
-      </div>
-
-      <div class="micro">
-        <span><i></i> 첫 접속 시 서버 특성상 5~15초 준비 시간이 있을 수 있습니다</span>
-        <span><i></i> 이미지 합치기 · 정렬 · 스택을 한 번에 자동화</span>
-      </div>
-    </section>
-
-    <!-- EXAMPLES -->
-    <h2 class="sectionTitle">상세페이지 작업 예시이미지(PRO버전)</h2>
-
-    <div class="examples">
-      <!-- Step 1 -->
-      <div class="exCard">
-        <div class="exMedia">
-          <img src="/assets/examples/examples_step1_upload.jpg"
-               alt="여러 장 이미지 업로드 및 순서 조정 화면 예시"
-               loading="lazy">
-        </div>
-        <div class="exCap">Step 1) 여러 장 업로드 → 순서 조정</div>
-      </div>
-
-      <!-- Step 2 (PRO) -->
-      <div class="exCard">
-        <div class="exMedia">
-          <img src="/assets/examples/examples_step3_pro_psd_layers.jpg"
-               alt="PRO PSD 고급개체 레이어 자동 생성 예시"
-               loading="lazy">
-        </div>
-        <div class="exCap">Step 2) PRO: PSD 레이어 편집 가능</div>
-      </div>
-
-      <!-- Step 3 (900px 결과) -->
-      <div class="exCard">
-        <div class="exMedia contain">
-          <img src="/assets/examples/examples_step2_result_900.jpg"
-               alt="900px 상세페이지 자동 생성 결과 예시"
-               loading="lazy">
-        </div>
-        <div class="exCap">Step 3) 900px 상세페이지 자동 완성</div>
-      </div>
-    </div>
-
-    <!-- 3개 배너(미니카드) : CTA 위에 배치 -->
-    <div class="miniGrid" aria-label="핵심 장점">
-      <div class="miniCard">
-        <p class="miniTitle">업무시간 절감</p>
-        <p class="miniDesc">이미지 합치기·정렬·스택을 한 번에 자동화</p>
-      </div>
-      <div class="miniCard">
-        <p class="miniTitle">대표가 직접 제작</p>
-        <p class="miniDesc">쇼핑몰 운영 실무에 꼭 필요한 기능만 담았습니다</p>
-      </div>
-      <div class="miniCard">
-        <p class="miniTitle">PRO 확장</p>
-        <p class="miniDesc">PSD(스마트오브젝트/레이어) 자동 생성</p>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="ctaBox">
-      <div class="ctaText">
-        <strong>지금 바로 무료로 테스트해 보세요.</strong><br>
-        이미지 몇 장만 올리면 상세페이지가 자동 완성됩니다.
-      </div>
-      <a class="btn btnPrimary" href="https://misharp-image-maker-v3.streamlit.app/">지금 무료 사용 →</a>
-    </div>
-
-    <div class="footer">
-      문의: misharpmail@naver.com<br>
-      © 2026 DetailPageMaker. All Rights Reserved.
-    </div>
-
+<section class="hero">
+  <div class="badgeRow">
+    <span class="badge">무료로 바로 시작</span>
+    <span class="badge">실무형 + 시간절약형</span>
+    <span class="badge">업로드 한번에 끝</span>
   </div>
+
+  <h1>쇼핑몰 상세페이지 자동 완성 생성기</h1>
+
+  <p class="sub">
+    20년 여성의류 쇼핑몰 대표가 직접 만든 실무형 자동 생성기입니다.<br>
+    여러 장의 이미지를 업로드하면 <b>900px 상세페이지</b>로 자동 완성됩니다.
+  </p>
+
+  <div class="ctaRow">
+    <a class="btn btnPrimary" href="https://misharp-image-maker-v3.streamlit.app/">무료로 시작하기 →</a>
+    <a class="btn btnGhost" href="/pro/">PRO 안내 보기 →</a>
+  </div>
+
+  <div class="micro">
+    <span>첫 접속 시 서버 특성상 5~15초 준비 시간이 있을 수 있습니다</span>
+    <span>이미지 합치기 · 정렬 · 스택을 한 번에 자동화</span>
+  </div>
+</section>
+
+<h2 class="sectionTitle">상세페이지 작업 예시이미지(PRO버전)</h2>
+
+<div class="examples">
+  <div class="exCard">
+    <div class="exMedia">
+      <img src="/assets/examples/examples_step1_upload.jpg" loading="lazy">
+    </div>
+    <div class="exCap">Step 1) 여러 장 업로드 → 순서 조정</div>
+  </div>
+
+  <div class="exCard">
+    <div class="exMedia">
+      <img src="/assets/examples/examples_step3_pro_psd_layers.jpg" loading="lazy">
+    </div>
+    <div class="exCap">Step 2) PRO: PSD 레이어 편집 가능</div>
+  </div>
+
+  <div class="exCard">
+    <div class="exMedia contain">
+      <img src="/assets/examples/examples_step2_result_900.jpg" loading="lazy">
+    </div>
+    <div class="exCap">Step 3) 900px 상세페이지 자동 완성</div>
+  </div>
+</div>
+
+<div class="miniGrid">
+  <div class="miniCard">
+    <p class="miniTitle">업무시간 절감</p>
+    <p class="miniDesc">이미지 합치기·정렬·스택을 한 번에 자동화</p>
+  </div>
+  <div class="miniCard">
+    <p class="miniTitle">대표가 직접 제작</p>
+    <p class="miniDesc">쇼핑몰 운영 실무에 꼭 필요한 기능만 담았습니다</p>
+  </div>
+  <div class="miniCard">
+    <p class="miniTitle">PRO 확장</p>
+    <p class="miniDesc">PSD(스마트오브젝트/레이어) 자동 생성</p>
+  </div>
+</div>
+
+<div class="ctaBox">
+  <div class="ctaText">
+    <strong>지금 바로 무료로 테스트해 보세요.</strong><br>
+    이미지 몇 장만 올리면 상세페이지가 자동 완성됩니다.
+  </div>
+  <a class="btn btnPrimary" href="https://misharp-image-maker-v3.streamlit.app/">지금 무료 사용 →</a>
+</div>
+
+<div class="footer">
+문의: misharpmail@naver.com<br>
+© 2026 DetailPageMaker. All Rights Reserved.
+</div>
+
+</div>
 </body>
 </html>
