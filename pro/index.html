@@ -1,1 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DetailPage Maker PRO</title>
+  <meta name="description" content="DetailPage Maker PRO 안내 페이지" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e6e8ef;
+      --text:#101828;
+      --muted:#667085;
+      --primary:#111827;
+      --shadow:0 10px 30px rgba(16,24,40,.07);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 520px at 20% -10%, rgba(17,24,39,.06), transparent 55%),
+        radial-gradient(860px 480px at 80% 0%, rgba(17,24,39,.05), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:56px 18px 80px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px
+    }
+    .brand{font-weight:950;letter-spacing:-.2px}
+    a.back{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:850;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius:12px;
+      background:#fff;
+    }
+    a.back:hover{background:rgba(17,24,39,.03)}
+    .card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      padding:30px 26px;
+    }
+    h1{margin:0 0 10px;font-size:34px;letter-spacing:-.6px;line-height:1.2}
+    .sub{margin:0 0 16px;color:var(--muted);line-height:1.75;font-weight:650}
+    .notice{
+      margin:16px 0 18px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(17,24,39,.10);
+      background:rgba(17,24,39,.03);
+      font-size:14px;
+      font-weight:850;
+      line-height:1.65;
+      color:#344054;
+    }
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    a.btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:950;
+      border:1px solid transparent;
+    }
+    a.primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.18)}
+    a.primary:hover{filter:brightness(.92)}
+    a.ghost{background:#fff;color:var(--primary);border:1px solid var(--border)}
+    a.ghost:hover{background:rgba(17,24,39,.03)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .mini{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .mini .t{font-weight:950;margin-bottom:6px}
+    .mini .d{color:var(--muted);font-size:13px;line-height:1.6;font-weight:650}
+    .footer{
+      margin-top:22px;
+      text-align:center;
+      font-size:12px;
+      color:#98A2B3;
+      font-weight:650;
+      line-height:1.7;
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">DetailPage Maker</div>
+      <a class="back" href="/" rel="noopener">← 홈으로</a>
+    </div>
 
+    <div class="card">
+      <h1>PRO 전용 안내 페이지</h1>
+      <p class="sub">
+        DetailPage Maker PRO는 고급 기능(PSD/확장 기능 등)을 제공하는 PRO 전용 버전입니다.<br>
+        발급받은 PRO 안내(접속 URL + 이용키)를 준비해 주세요.
+      </p>
+
+      <div class="notice">
+        🔔 첫 접속 시 서버 특성상 5~15초 정도 준비 시간이 있을 수 있습니다.<br>
+        영어 안내 화면이 잠깐 뜰 수 있지만, 잠시 기다리시면 자동으로 실행됩니다.
+      </div>
+
+      <div class="btns">
+        <a class="btn primary" href="https://misharp-image-maker-v3.streamlit.app/" target="_blank" rel="noopener">
+          PRO 프로그램 실행 →
+        </a>
+        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScA_ZEMDmlW3DwdPk_Bn6L5WUeOoT7BFhRb3MPP2t_EMtBHwA/viewform" target="_blank" rel="noopener">
+          PRO 신청/문의 →
+        </a>
+      </div>
+
+      <div class="grid">
+        <div class="mini">
+          <div class="t">안정적인 규격</div>
+          <div class="d">900px 기준 결과물을 안정적으로 맞춥니다.</div>
+        </div>
+        <div class="mini">
+          <div class="t">업무시간 단축</div>
+          <div class="d">반복 작업을 줄여 디자인에 집중할 수 있습니다.</div>
+        </div>
+        <div class="mini">
+          <div class="t">PRO 확장</div>
+          <div class="d">PSD/템플릿/미리보기 등 고급 기능을 제공합니다.</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        문의: misharpmail@naver.com<br>
+        © 2006-2026 MISHARP. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
