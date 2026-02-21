@@ -3,167 +3,231 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DetailPage Maker</title>
+  <title>MISHARP Detail Page Maker</title>
 
-  <!-- Google Font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Noto Sans KR: 안정적/부드러운 한글 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f9fafc;
+      --bg1:#fbfcff;
+      --bg2:#f3f6fb;
+
       --card:#ffffff;
-      --border:#e6e8ef;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --primary:#111827;
-      --shadow:0 15px 40px rgba(0,0,0,.06);
-      --radius:22px;
+      --border:#e8edf5;
+
+      --text:#1b2533;
+      --muted:#6b7787;
+
+      /* 부드러운 네이비 */
+      --primary:#162238;
+      --primaryHover:#111a2a;
+
+      /* 포인트(살짝 웜톤) */
+      --accent:#ff8a3d;
+      --accentSoft:#fff2ea;
+
+      --shadow:0 16px 45px rgba(15,23,42,.08);
+      --shadow2:0 10px 28px rgba(15,23,42,.06);
+
+      --radius:24px;
     }
 
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
 
     body{
       margin:0;
-      font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      background:linear-gradient(180deg,#f9fafc 0%,#eef2f7 100%);
+      font-family:"Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(900px 600px at 12% 8%, rgba(255,138,61,.11), rgba(255,255,255,0) 52%),
+        radial-gradient(900px 600px at 88% 12%, rgba(59,130,246,.09), rgba(255,255,255,0) 52%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
     }
 
     .wrap{
       max-width:1040px;
       margin:0 auto;
-      padding:60px 20px 90px;
+      padding:58px 20px 92px;
     }
 
     .topbar{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      margin-bottom:28px;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
     }
 
     .brand{
-      font-weight:700;
-      font-size:18px;
-      letter-spacing:-0.3px;
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.2px;
+      color:#0f172a;
     }
 
     .pill{
-      background:#eef2f7;
-      padding:8px 14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
       border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.75);
+      backdrop-filter: blur(6px);
+      color:#526174;
       font-size:13px;
-      font-weight:500;
-      color:#475569;
+      font-weight:600;
+      letter-spacing:-0.2px;
     }
 
     .hero{
-      background:var(--card);
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:50px 40px;
+      padding:52px 44px 40px;
     }
 
     h1{
-      margin:0 0 18px;
+      margin:0 0 14px;
       font-size:40px;
       font-weight:800;
-      letter-spacing:-0.6px;
-      line-height:1.25;
+      letter-spacing:-1.2px; /* 자간을 줄여(덜 벌어짐) */
+      line-height:1.18;
+      color:#0f172a;
     }
 
     .sub{
+      margin:0 0 22px;
       font-size:17px;
       font-weight:500;
+      letter-spacing:-0.35px;
       color:var(--muted);
-      line-height:1.8;
-      margin-bottom:26px;
+      line-height:1.75;
     }
 
     .notice{
-      background:#f3f4f6;
-      border-radius:16px;
-      padding:16px 20px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px 18px;
+      margin:14px 0 26px;
+      box-shadow:var(--shadow2);
+    }
+    .notice .icon{
+      width:34px; height:34px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--accentSoft);
+      color:var(--accent);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+    .notice .txt{
       font-size:14px;
-      color:#4b5563;
+      color:#556476;
       line-height:1.7;
-      margin-bottom:28px;
+      letter-spacing:-0.2px;
+      font-weight:500;
     }
 
     .btns{
       display:flex;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-bottom:36px;
+      margin:6px 0 32px;
     }
 
     a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       padding:14px 22px;
       border-radius:14px;
       font-size:15px;
-      font-weight:600;
+      font-weight:700;
+      letter-spacing:-0.3px;
       text-decoration:none;
-      transition:.2s ease;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      user-select:none;
+      white-space:nowrap;
     }
 
     a.primary{
-      background:#111827;
-      color:white;
-      box-shadow:0 8px 24px rgba(0,0,0,.12);
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 12px 26px rgba(22,34,56,.18);
     }
-
     a.primary:hover{
+      background:var(--primaryHover);
       transform:translateY(-2px);
-      box-shadow:0 12px 28px rgba(0,0,0,.18);
+      box-shadow:0 16px 32px rgba(22,34,56,.22);
     }
 
     a.ghost{
-      background:white;
+      background:rgba(255,255,255,.92);
       border:1px solid var(--border);
-      color:#111827;
+      color:#0f172a;
     }
-
     a.ghost:hover{
-      background:#f3f4f6;
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(15,23,42,.07);
     }
 
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:20px;
+      gap:18px;
+      margin-top:8px;
     }
 
     .card{
-      background:white;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
       border-radius:18px;
       padding:22px;
-      box-shadow:0 8px 24px rgba(0,0,0,.04);
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
     }
 
     .card .t{
-      font-weight:700;
+      font-weight:800;
       margin-bottom:8px;
+      letter-spacing:-0.5px;
+      color:#0f172a;
     }
 
     .card .d{
       font-size:14px;
-      color:#6b7280;
-      line-height:1.7;
+      color:#637284;
+      line-height:1.75;
+      letter-spacing:-0.2px;
+      font-weight:500;
     }
 
     .footer{
-      margin-top:40px;
+      margin-top:34px;
       text-align:center;
       font-size:13px;
-      color:#9ca3af;
+      color:#9aa6b2;
+      letter-spacing:-0.15px;
       line-height:1.8;
     }
 
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:30px}
-      .hero{padding:35px 25px}
+    @media (max-width: 920px){
+      .hero{ padding:38px 22px 30px; }
+      h1{ font-size:30px; }
+      .grid{ grid-template-columns:1fr; }
+      .btns a.btn{ width:100%; }
+      .wrap{ padding:44px 16px 80px; }
     }
   </style>
 </head>
@@ -171,25 +235,28 @@
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">DetailPage Maker</div>
+      <div class="brand">MISHARP Detail Page Maker</div>
       <div class="pill">MISHARP 실사용 기반</div>
     </div>
 
-    <div class="hero">
-      <h1>상세페이지 이미지,<br>업로드만 하면 자동 완성</h1>
+    <section class="hero">
+      <h1>쇼핑몰 상세페이지 자동 생성기</h1>
 
       <p class="sub">
-        JPG/PNG 최대 10장 업로드 → 간격 조정 → 생성 → 저장.<br>
-        결과는 가로 900px 고정으로 자동 정리됩니다.
+        쇼핑몰 상세페이지! 이미지만 업로드하면 자동 완성!<br>
+        20년차 여성의류쇼핑몰 대표가 직접 만든 최고의 상세페이지 업무툴
       </p>
 
       <div class="notice">
-        🔔 첫 접속 시 서버 특성상 5~15초 준비 시간이 있을 수 있습니다.<br>
-        영어 안내 화면이 잠시 나타날 수 있으나 자동으로 실행됩니다.
+        <div class="icon">🔔</div>
+        <div class="txt">
+          첫 접속 시 서버 특성상 5~15초 준비 시간이 있을 수 있습니다.<br>
+          영어 안내 화면이 잠시 나타날 수 있으나 자동으로 실행됩니다.
+        </div>
       </div>
 
       <div class="btns">
-        <a class="btn primary" href="https://detalepage-maker-v1.streamlit.app/" target="_blank">
+        <a class="btn primary" href="https://detalepage-maker-v1.streamlit.app/" target="_blank" rel="noopener">
           무료로 시작하기 →
         </a>
         <a class="btn ghost" href="/pro/">
@@ -200,15 +267,15 @@
       <div class="grid">
         <div class="card">
           <div class="t">업무시간 절감</div>
-          <div class="d">이미지 합치기와 정렬 작업을 자동화합니다.</div>
+          <div class="d">여러 개의 이미지 합치기와 정렬 작업을 한번에 자동화</div>
         </div>
         <div class="card">
-          <div class="t">규격 통일</div>
-          <div class="d">쇼핑몰 기준에 맞는 900px 규격 유지.</div>
+          <div class="t">현직 쇼핑몰 대표가 직접 제작</div>
+          <div class="d">상세페이지 제작에 실제로 필요한 기능만 제공</div>
         </div>
         <div class="card">
           <div class="t">PRO 확장</div>
-          <div class="d">PSD 생성 및 고급 기능 제공.</div>
+          <div class="d">PSD(고급개체 레이어) 기능 제공</div>
         </div>
       </div>
 
@@ -216,7 +283,7 @@
         문의: misharpmail@naver.com<br>
         © 2006-2026 MISHARP. All Rights Reserved.
       </div>
-    </div>
+    </section>
   </div>
 </body>
 </html>
