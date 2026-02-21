@@ -3,127 +3,171 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DetailPage Maker | 상세페이지 자동 생성기</title>
-  <meta name="description" content="쇼핑몰 상세페이지 이미지를 업로드만 하면 자동으로 900px 규격으로 생성합니다." />
+  <title>DetailPage Maker</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#ffffff;
+      --bg:#f9fafc;
       --card:#ffffff;
       --border:#e6e8ef;
-      --text:#101828;
-      --muted:#667085;
+      --text:#1f2937;
+      --muted:#6b7280;
       --primary:#111827;
-      --shadow:0 10px 30px rgba(16,24,40,.07);
-      --radius:18px;
+      --shadow:0 15px 40px rgba(0,0,0,.06);
+      --radius:22px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(1000px 600px at 20% -10%, rgba(17,24,39,.06), transparent 50%),
-        radial-gradient(900px 500px at 80% 0%, rgba(17,24,39,.05), transparent 55%),
-        var(--bg);
+      font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:linear-gradient(180deg,#f9fafc 0%,#eef2f7 100%);
       color:var(--text);
     }
-    .wrap{max-width:1040px;margin:0 auto;padding:56px 18px 80px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
-    .brand{font-weight:950;font-size:16px;letter-spacing:-.2px}
+
+    .wrap{
+      max-width:1040px;
+      margin:0 auto;
+      padding:60px 20px 90px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:-0.3px;
+    }
+
     .pill{
-      padding:10px 14px;border-radius:999px;
-      background:rgba(17,24,39,.06);
-      border:1px solid var(--border);
-      font-weight:850;font-size:13px;
+      background:#eef2f7;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:500;
+      color:#475569;
     }
+
     .hero{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
       background:var(--card);
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:36px 28px;
+      padding:50px 40px;
     }
+
     h1{
-      margin:0 0 12px;
-      font-size:42px;
-      line-height:1.15;
-      letter-spacing:-0.6px;
-    }
-    .sub{
-      color:var(--muted);
-      font-weight:650;
-      line-height:1.75;
-      margin-bottom:20px;
-    }
-    .notice{
-      margin:14px 0 20px;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid rgba(17,24,39,.08);
-      background:rgba(17,24,39,.03);
-      font-size:14px;
+      margin:0 0 18px;
+      font-size:40px;
       font-weight:800;
-      color:#344054;
-      line-height:1.6;
+      letter-spacing:-0.6px;
+      line-height:1.25;
     }
-    .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+
+    .sub{
+      font-size:17px;
+      font-weight:500;
+      color:var(--muted);
+      line-height:1.8;
+      margin-bottom:26px;
+    }
+
+    .notice{
+      background:#f3f4f6;
+      border-radius:16px;
+      padding:16px 20px;
+      font-size:14px;
+      color:#4b5563;
+      line-height:1.7;
+      margin-bottom:28px;
+    }
+
+    .btns{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:36px;
+    }
+
     a.btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:14px 20px;
+      padding:14px 22px;
       border-radius:14px;
-      text-decoration:none;
-      font-weight:950;
       font-size:15px;
+      font-weight:600;
+      text-decoration:none;
       transition:.2s ease;
     }
+
     a.primary{
-      background:var(--primary);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(17,24,39,.18);
+      background:#111827;
+      color:white;
+      box-shadow:0 8px 24px rgba(0,0,0,.12);
     }
-    a.primary:hover{filter:brightness(.9)}
+
+    a.primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 28px rgba(0,0,0,.18);
+    }
+
     a.ghost{
-      background:#fff;
-      color:var(--primary);
+      background:white;
       border:1px solid var(--border);
+      color:#111827;
     }
-    a.ghost:hover{background:rgba(17,24,39,.03)}
+
+    a.ghost:hover{
+      background:#f3f4f6;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      margin-top:24px;
+      gap:20px;
     }
+
     .card{
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:#fff;
-      padding:18px;
-      box-shadow:var(--shadow);
+      background:white;
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
     }
+
     .card .t{
-      font-weight:950;
-      margin-bottom:6px;
+      font-weight:700;
+      margin-bottom:8px;
     }
+
     .card .d{
-      color:var(--muted);
-      font-size:13px;
-      font-weight:650;
-      line-height:1.6;
-    }
-    .footer{
-      margin-top:28px;
-      text-align:center;
-      font-size:12px;
-      color:#98A2B3;
-      font-weight:650;
+      font-size:14px;
+      color:#6b7280;
       line-height:1.7;
     }
+
+    .footer{
+      margin-top:40px;
+      text-align:center;
+      font-size:13px;
+      color:#9ca3af;
+      line-height:1.8;
+    }
+
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
-      h1{font-size:32px}
+      h1{font-size:30px}
+      .hero{padding:35px 25px}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="topbar">
@@ -133,9 +177,10 @@
 
     <div class="hero">
       <h1>상세페이지 이미지,<br>업로드만 하면 자동 완성</h1>
+
       <p class="sub">
         JPG/PNG 최대 10장 업로드 → 간격 조정 → 생성 → 저장.<br>
-        결과는 가로 <b>900px 고정</b>으로 자동 정리됩니다.
+        결과는 가로 900px 고정으로 자동 정리됩니다.
       </p>
 
       <div class="notice">
