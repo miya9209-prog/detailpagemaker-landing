@@ -1,16 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>DetailPageMaker</title>
     <link>https://detailpagemaker.com/</link>
     <description>20년차 여성의류 쇼핑몰 대표가 만든 상세페이지 자동 생성기</description>
     <language>ko</language>
+    <lastBuildDate>Sat, 22 Feb 2026 23:30:00 +0900</lastBuildDate>
 
     <item>
-      <title>쇼핑몰 상세페이지 자동 완성 생성기</title>
+      <title>쇼핑몰 상세페이지 자동 생성기 소개</title>
       <link>https://detailpagemaker.com/</link>
       <description>이미지를 업로드하면 900px 상세페이지로 자동 완성되는 실무형 자동화 도구</description>
       <pubDate>Sat, 22 Feb 2026 09:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>스마트스토어 상세페이지 제작 자동화 방법</title>
+      <link>https://detailpagemaker.com/</link>
+      <description>외주 없이 상세페이지 제작 시간을 줄이는 자동 생성 시스템</description>
+      <pubDate>Sat, 22 Feb 2026 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>900px 상세페이지 자동 완성 기능 안내</title>
+      <link>https://detailpagemaker.com/</link>
+      <description>여러 장 이미지를 한 번에 정렬하고 규격에 맞춰 완성하는 기능</description>
+      <pubDate>Sat, 22 Feb 2026 15:00:00 +0900</pubDate>
     </item>
 
   </channel>
