@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.detailpagemaker.com/sitemap.xml
+Sitemap: https://detailpagemaker.com/sitemap.xml
