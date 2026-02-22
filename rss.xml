@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>DetailPageMaker 업데이트</title>
+    <title>DetailPageMaker 공식 업데이트</title>
     <link>https://detailpagemaker.com/</link>
-    <description>20년차 여성의류 쇼핑몰 대표가 직접 만들고 사용하는 실무형 쇼핑몰 상세페이지 자동 생성기(900px). 업데이트/공지 RSS입니다.</description>
+    <description>
+      20년차 여성의류 쇼핑몰 대표가 만든 실무형 쇼핑몰 상세페이지 자동 생성기.
+      900px 상세페이지 자동 완성 도구의 업데이트 소식입니다.
+    </description>
     <language>ko</language>
     <lastBuildDate>Sat, 22 Feb 2026 00:00:00 +0900</lastBuildDate>
 
     <item>
-      <title>DetailPageMaker 정식 오픈 안내</title>
+      <title>DetailPageMaker 정식 오픈</title>
       <link>https://detailpagemaker.com/</link>
-      <guid isPermaLink="true">https://detailpagemaker.com/</guid>
+      <guid>https://detailpagemaker.com/</guid>
       <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
       <description><![CDATA[
-        DetailPageMaker는 여러 장의 이미지를 업로드하면 900px 쇼핑몰 상세페이지로 자동 완성해주는 실무형 자동 생성기입니다.
-        무료 버전과 PRO(PSD/레이어 기반) 확장 기능을 제공합니다.
+        여러 장의 이미지를 업로드하면 900px 쇼핑몰 상세페이지로 자동 완성되는
+        실무형 상세페이지 자동 생성기가 정식 오픈했습니다.
       ]]></description>
     </item>
 
     <item>
-      <title>무료 버전: 이미지 업로드 → 900px 상세페이지 자동 완성</title>
-      <link>https://detalepage-maker-v1.streamlit.app/</link>
-      <guid isPermaLink="true">https://detalepage-maker-v1.streamlit.app/</guid>
+      <title>상세페이지 자동 생성기 SEO 구조 보강 업데이트</title>
+      <link>https://detailpagemaker.com/</link>
+      <guid>https://detailpagemaker.com/seo-update</guid>
       <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
       <description><![CDATA[
-        여러 장 이미지를 업로드하면 자동 정렬/스택 후 900px 상세페이지 이미지(JPG)로 완성됩니다.
-      ]]></description>
-    </item>
-
-    <item>
-      <title>PRO 버전: PSD(스마트오브젝트/레이어) 기반으로 더 빠르게</title>
-      <link>https://misharp-image-maker-v3.streamlit.app/</link>
-      <guid isPermaLink="true">https://misharp-image-maker-v3.streamlit.app/</guid>
-      <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
-      <description><![CDATA[
-        PRO는 JPG 결과뿐 아니라 PSD 기반(스마트오브젝트/레이어 편집 가능)으로 제작됩니다.
-        운영 상황에 맞춰 문구/이미지 교체가 쉬워져 반복 작업 시간이 크게 단축됩니다.
+        검색엔진 최적화를 위해 구조화 데이터, FAQ 스키마, canonical 통일 작업을 완료했습니다.
       ]]></description>
     </item>
 
