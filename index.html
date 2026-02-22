@@ -346,12 +346,104 @@ h1{
   font-weight:800;
 }
 
+/* =========================
+   FAQ (추가)
+========================= */
+.faq{
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:var(--radius);
+  box-shadow:var(--shadowSoft);
+  padding:34px 34px;
+  margin:0 0 130px;
+}
+.faq h3{
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:950;
+  letter-spacing:-.2px;
+}
+.faqList{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.faqItem{
+  border:1px solid rgba(15,23,42,.10);
+  background:rgba(255,255,255,.88);
+  border-radius:16px;
+  overflow:hidden;
+}
+.faqQ{
+  width:100%;
+  text-align:left;
+  padding:16px 16px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-weight:950;
+  font-size:15px;
+  color:rgba(15,23,42,.90);
+}
+.faqQ span{
+  color:rgba(15,23,42,.70);
+  font-weight:900;
+}
+.faqA{
+  display:none;
+  padding:0 16px 16px;
+  color:rgba(15,23,42,.72);
+  line-height:1.7;
+  font-size:14.5px;
+  font-weight:650;
+}
+.faqA a{
+  color:rgba(15,23,42,.85);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-weight:900;
+}
+.faqItem.open .faqA{ display:block; }
+.faqHint{
+  margin-top:16px;
+  font-size:13px;
+  color:rgba(15,23,42,.60);
+  font-weight:800;
+}
+.faqHint a{
+  color:rgba(15,23,42,.80);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
 /* Footer */
 .footer{
   text-align:center;
   color:rgba(15,23,42,.55);
   font-size:14px;
   padding:80px 0 30px;
+}
+
+/* 푸터 링크 (추가) */
+.footerLinks{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.footerLinks a{
+  color:rgba(15,23,42,.62);
+  text-decoration:none;
+  font-weight:850;
+}
+.footerLinks a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 /* =========================
@@ -367,6 +459,7 @@ h1{
   .miniGrid{ grid-template-columns:1fr; margin-bottom:70px; }
   .topbar{ flex-direction:column; align-items:flex-start; }
   .badges{ justify-content:flex-start; }
+  .faq{ padding:24px 18px; }
 }
 </style>
 </head>
@@ -397,7 +490,7 @@ h1{
     <h1>쇼핑몰 상세페이지 자동 완성 생성기</h1>
 
     <p class="sub">
-      20년 여성의류 쇼핑몰 대표가 직접 만든 실무형 자동 생성기입니다.<br>
+      20년 여성의류 온라인 쇼핑몰 대표가 직접 만든 실무형 자동 생성기입니다.<br>
       여러 장의 이미지를 업로드하면 <b>900px 상세페이지</b>로 자동 완성됩니다.
     </p>
 
@@ -472,11 +565,129 @@ h1{
     </a>
   </div>
 
+  <!-- FAQ (추가) -->
+  <section class="faq" aria-label="FAQ">
+    <h3>FAQ (자주 묻는 질문)</h3>
+
+    <div class="faqList">
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          1) 무료 버전으로 무엇을 만들 수 있나요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          여러 장 이미지를 업로드하면 자동 정렬/스택 후 <b>900px 상세페이지 이미지(JPG)</b>로 완성됩니다.
+          기본 상세페이지 제작에 필요한 핵심 기능을 무료로 제공합니다.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          2) 첫 접속 시 5~15초 기다려야 하나요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          네. 서버가 준비되는 과정이 있어 첫 실행 시 잠시 시간이 걸릴 수 있습니다.
+          잠시 후 자동으로 정상 동작합니다.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          3) PRO 버전은 무엇이 다른가요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          PRO는 JPG 결과뿐 아니라 <b>PSD 기반(스마트오브젝트/레이어 편집 가능)</b>으로 제작됩니다.
+          운영 상황에 맞게 문구/이미지 교체가 쉬워져 작업 효율이 크게 올라갑니다.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          4) 이미지 크기나 비율이 제각각이어도 되나요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          가능합니다. 업로드한 이미지는 규칙에 따라 정렬되며,
+          최종 결과는 <b>가로 900px 기준</b>으로 자동 완성됩니다.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          5) 제 사진이 서버에 저장되나요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          생성 처리를 위해 업로드된 파일은 일시적으로 처리될 수 있습니다.
+          자세한 내용은 <a href="/privacy/">개인정보처리방침</a>에서 확인해 주세요.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          6) 모바일에서도 사용 가능한가요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          가능합니다. 다만 이미지 업로드/정렬 작업은 PC 환경이 더 편리합니다.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          7) 문의는 어디로 하면 되나요?
+          <span>+</span>
+        </button>
+        <div class="faqA">
+          하단 안내 이메일로 문의 주시면 안내드립니다. (misharpmail@naver.com)
+        </div>
+      </div>
+    </div>
+
+    <div class="faqHint">
+      정책 페이지: <a href="/privacy/">개인정보처리방침</a> · <a href="/terms/">이용약관</a> · <a href="/about/">서비스 소개</a> · <a href="/contact/">문의</a>
+    </div>
+  </section>
+
   <div class="footer">
     문의: misharpmail@naver.com<br>
     © 2026 DetailPageMaker. All Rights Reserved.
+
+    <div class="footerLinks" aria-label="푸터 링크">
+      <a href="/about/">서비스 소개</a>
+      <a href="/privacy/">개인정보처리방침</a>
+      <a href="/terms/">이용약관</a>
+      <a href="/contact/">문의</a>
+    </div>
   </div>
 
 </div>
+
+<script>
+  // FAQ Toggle
+  document.querySelectorAll('.faqItem .faqQ').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faqItem');
+      const isOpen = item.classList.contains('open');
+
+      // close all
+      document.querySelectorAll('.faqItem').forEach(i => {
+        i.classList.remove('open');
+        const s = i.querySelector('.faqQ span');
+        if (s) s.textContent = '+';
+      });
+
+      // open clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        const s = item.querySelector('.faqQ span');
+        if (s) s.textContent = '–';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
