@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>DetailPageMaker</title>
+    <title>DetailPageMaker 업데이트</title>
     <link>https://detailpagemaker.com/</link>
-    <description>20년차 여성의류 쇼핑몰 대표가 만든 상세페이지 자동 생성기</description>
+    <description>20년차 여성의류 쇼핑몰 대표가 직접 만들고 사용하는 실무형 쇼핑몰 상세페이지 자동 생성기(900px). 업데이트/공지 RSS입니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 22 Feb 2026 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2026 00:00:00 +0900</lastBuildDate>
 
     <item>
-      <title>쇼핑몰 상세페이지 자동 생성기 소개</title>
+      <title>DetailPageMaker 정식 오픈 안내</title>
       <link>https://detailpagemaker.com/</link>
-      <description>이미지를 업로드하면 900px 상세페이지로 자동 완성되는 실무형 자동화 도구</description>
-      <pubDate>Sat, 22 Feb 2026 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">https://detailpagemaker.com/</guid>
+      <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
+      <description><![CDATA[
+        DetailPageMaker는 여러 장의 이미지를 업로드하면 900px 쇼핑몰 상세페이지로 자동 완성해주는 실무형 자동 생성기입니다.
+        무료 버전과 PRO(PSD/레이어 기반) 확장 기능을 제공합니다.
+      ]]></description>
     </item>
 
     <item>
-      <title>스마트스토어 상세페이지 제작 자동화 방법</title>
-      <link>https://detailpagemaker.com/</link>
-      <description>외주 없이 상세페이지 제작 시간을 줄이는 자동 생성 시스템</description>
-      <pubDate>Sat, 22 Feb 2026 12:00:00 +0900</pubDate>
+      <title>무료 버전: 이미지 업로드 → 900px 상세페이지 자동 완성</title>
+      <link>https://detalepage-maker-v1.streamlit.app/</link>
+      <guid isPermaLink="true">https://detalepage-maker-v1.streamlit.app/</guid>
+      <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
+      <description><![CDATA[
+        여러 장 이미지를 업로드하면 자동 정렬/스택 후 900px 상세페이지 이미지(JPG)로 완성됩니다.
+      ]]></description>
     </item>
 
     <item>
-      <title>900px 상세페이지 자동 완성 기능 안내</title>
-      <link>https://detailpagemaker.com/</link>
-      <description>여러 장 이미지를 한 번에 정렬하고 규격에 맞춰 완성하는 기능</description>
-      <pubDate>Sat, 22 Feb 2026 15:00:00 +0900</pubDate>
+      <title>PRO 버전: PSD(스마트오브젝트/레이어) 기반으로 더 빠르게</title>
+      <link>https://misharp-image-maker-v3.streamlit.app/</link>
+      <guid isPermaLink="true">https://misharp-image-maker-v3.streamlit.app/</guid>
+      <pubDate>Sat, 22 Feb 2026 00:00:00 +0900</pubDate>
+      <description><![CDATA[
+        PRO는 JPG 결과뿐 아니라 PSD 기반(스마트오브젝트/레이어 편집 가능)으로 제작됩니다.
+        운영 상황에 맞춰 문구/이미지 교체가 쉬워져 반복 작업 시간이 크게 단축됩니다.
+      ]]></description>
     </item>
 
   </channel>
